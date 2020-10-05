@@ -1,0 +1,378 @@
+/**
+
+  Common styles
+
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.button {
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 55px;
+  line-height: 1;
+  border: none;
+  min-width: 200px;
+  background: none;
+  cursor: pointer;
+  padding: 17px 40px 19px;
+}
+
+.button--primary {
+  background: #458FF6;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.button--secondary {
+  background: #fff;
+  color: #458FF6;
+  border: 1px solid #458FF6;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: 1120px;
+  margin: 0 auto;
+}
+
+.maincontent {
+  flex-grow: 1;
+}
+
+.dots-image::before {
+  content: "";
+  width: 131px;
+  height: 115px;
+  background: url("../img/dots.svg") center center no-repeat;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/**
+
+  Logo
+
+*/
+
+.logo {
+  display: inline-block;
+}
+
+.logo__img {
+  display: block;
+  width: 160px;
+  height: 41px;
+}
+
+.logo__img--dark {
+  background: url("../img/logo-dark.svg") center center no-repeat;
+}
+
+.logo__img--white {
+  background: url("../img/logo-white.svg") center center no-repeat;
+}
+
+/**
+
+  Header
+
+*/
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 56px;
+}
+
+/**
+
+  Navigation
+
+*/
+
+.nav ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul ul {
+  display: none;
+  position: absolute;
+  /* background-color: #67c3f3; */
+}
+
+.nav__link {
+  font-size: 18px;
+  color: rgba(31, 21, 52, 0.5);
+  text-decoration: none;
+}
+
+.nav__link--active {
+  color: #1f1534;
+}
+
+.nav__link:hover {
+  border-radius: 5px;
+  color: black;
+  transition: .2s;
+  background-color: #f4f7f8;
+}
+
+.nav__link:not(:hover) {
+  transition: .8s;
+}
+
+.nav__link--sub-list {
+  float: left;
+  height: 40px;
+  width: 85px;
+  line-height: 85px;
+  position: relative;
+}
+
+.nav__link--sub-list:hover {
+  border-radius: 5px;
+  transition: .2s;
+  background-color: #f4f7f8;
+  min-width: 90px;
+}
+
+.nav__link--sub-link {
+  color: rgba(31, 21, 52, 0.5);
+  text-decoration: none;
+  font-size: 18px;
+  /* position: absolute; */
+  position: relative;
+  top: 50%;
+  margin-top: -20px;
+  height: 40px;
+  line-height: 40px;
+  width: 40px;
+  display: block;
+  text-align: center;
+}
+
+/* Нижче стилі Палок-виєЖЖалок */
+
+/* ВиєЖЖалка з ліва на право для HOME */
+.nav__link-home:after {
+  display: block;
+  content: "";
+  height: 2px;
+  width: 0%;
+  background-color: #ffeb3b;
+  transition: width .2s ease-in-out;
+}
+
+.nav__link-home:hover:after,
+.nav__link-home:focus:after {
+  width: 100%;
+}
+
+/* ВиєЖЖалка з центру для Find a doctor */
+
+.nav__item-doctor{
+  position: relative;
+}
+
+.nav__link-doctor:after {
+  background-color: #ffeb3b;
+  display: block;
+  content: "";
+  height: 2px;
+  width: 0%;
+  left:50%;
+  position:absolute;
+  -webkit-transition: width .3s ease-in-out;
+  -moz--transition: width .3s ease-in-out;
+  transition: width .3s ease-in-out;
+  -webkit-transform:translateX(-10%);
+  -moz-transform:translateX(-10%);
+  transform:translateX(-50%);
+}
+
+.nav__link-doctor:hover:after,
+.nav__link-doctor:focus:after {
+  width: 100%;
+}
+
+
+/* ВиєЖЖалка з права на ліво для APPS */
+.nav__item-apps{
+  position: relative;
+}
+.nav__link-apps:after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  right: 0%;
+  width: 0%;
+  background-color: #ffeb3b;
+  transition: width .2s ease-in-out;
+}
+
+.nav__link-apps:hover:after,
+.nav__link-apps:focus:after {
+    width: 100%;
+}
+
+/* ВиєЖЖалка з права на ліво для TESTIMONIALS */
+.nav__item-test{
+  position: relative;
+}
+.nav__link-test:after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  right: 0%;
+  width: 0%;
+  background-color: #ffeb3b;
+  transition: width .2s ease-in-out;
+}
+
+.nav__link-test:hover:after,
+.nav__link-test:focus:after {
+    width: 100%;
+}
+
+/* Виєжжалка для субменю */
+.nav__link--sub-link:after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 0%;
+  background-color: #ffeb3b;
+  transition: width .2s ease-in-out;
+}
+
+.nav__link--sub-link:hover:after,
+.nav__link--sub-link:focus:after {
+    width: 85px;
+}
+
+/* Кінець стилів Палок-виєЖЖалок */
+
+.nav__link--sub-link:hover {
+  color: black;
+}
+
+.nav li:hover ul {
+  display: block;
+}
+
+.nav li:hover li {
+  display: block;
+}
+
+.nav__list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav__item:not(:last-child) {
+  margin-right: 40px;
+}
+
+/**
+
+  Footer
+
+*/
+
+.footer {
+  position: relative;
+  padding: 118px 0 113px 0;
+  background: linear-gradient(183.41deg, #67c3f3 -8.57%, #0b326d 82.96%);
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__column--small {
+  width: 150px;
+}
+
+.footer__column--large {
+  width: 390px;
+}
+
+.footer__column--flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-content {
+  font-size: 18px;
+  font-weight: 300;
+  color: #ffffffaa;
+}
+
+.footer__description {
+  margin-top: 21px;
+}
+
+.footer__copyright {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.footer__column-title {
+  margin-top: 10px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 60px;
+}
+
+.footer__list {
+  margin-top: 35px;
+}
+
+.footer__link {
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  color: #fff;
+}
+
+.footer__list-item:not(:first-child) {
+  margin-top: 20px;
+}
