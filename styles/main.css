@@ -36,6 +36,89 @@ p, h1, h2, h3, h4, h5, h6 {
   border: 1px solid #458FF6;
 }
 
+.title{
+  font-size: 36px;
+  line-height: 1.55;
+  font-weight: 700;
+  color: #000;
+  position: relative;
+  padding-bottom: 26px;
+}
+.title::before{
+  content: '';
+  background: #000;
+  width: 56px;
+  height: 2px;
+  border-radius: 5px;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.title--border-middle::before{
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+.services{
+  margin-top: 192px;
+}
+
+.services__top{
+  max-width: 950px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services__description{
+  line-height: 1.66;
+  font-weight: 300;
+  color: #7d7987;
+  font-size: 18px;
+  margin-top: 33px;
+}
+
+.card{
+  background: #fff;
+  box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+  border-radius: 20px;
+  padding: 54px 37px;
+  max-width: 350px;
+}
+
+.card__title{
+  color: #000;
+  font-size: 24px;
+  line-height: 2.33;
+  font-weight: 700;
+  margin-top: 22px;
+}
+
+.card__description{
+  color: #7d7987;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+.card__icon{
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.card__icon--search{
+  background-image: url(../img/search.svg);
+
+}
+
+
+
 ul {
   margin: 0;
   padding: 0;
@@ -56,9 +139,24 @@ img {
   max-width: 100%;
 }
 
+/* Grid System */
+
 .container {
   width: 1120px;
   margin: 0 auto;
+}
+
+.row{
+  display: flex;
+}
+
+.col{
+  flex-grow: 1;
+}
+
+.col-50{
+  width: 50%;
+  max-width: 50%;
 }
 
 .maincontent {
@@ -182,108 +280,43 @@ img {
   text-align: center;
 }
 
-/* Нижче стилі Палок-виєЖЖалок */
-
-/* ВиєЖЖалка з ліва на право для HOME */
-.nav__link-home:after {
-  display: block;
-  content: "";
-  height: 2px;
-  width: 0%;
-  background-color: #ffeb3b;
-  transition: width .2s ease-in-out;
-}
-
-.nav__link-home:hover:after,
-.nav__link-home:focus:after {
-  width: 100%;
-}
-
-/* ВиєЖЖалка з центру для Find a doctor */
-
-.nav__item-doctor{
+.hero{
+  margin-top: 84px;
   position: relative;
 }
 
-.nav__link-doctor:after {
-  background-color: #ffeb3b;
-  display: block;
-  content: "";
-  height: 2px;
-  width: 0%;
-  left:50%;
-  position:absolute;
-  -webkit-transition: width .3s ease-in-out;
-  -moz--transition: width .3s ease-in-out;
-  transition: width .3s ease-in-out;
-  -webkit-transform:translateX(-10%);
-  -moz-transform:translateX(-10%);
-  transform:translateX(-50%);
+.hero::before{
+  background: url(../img/blue-dots.svg) left center no-repeat;
+  top: 0;
 }
 
-.nav__link-doctor:hover:after,
-.nav__link-doctor:focus:after {
-  width: 100%;
+.hero__column--content{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-right: 110px;
+  flex-direction: column;
 }
 
-
-/* ВиєЖЖалка з права на ліво для APPS */
-.nav__item-apps{
-  position: relative;
-}
-.nav__link-apps:after {
-  display: block;
-  position: absolute;
-  content: "";
-  height: 2px;
-  right: 0%;
-  width: 0%;
-  background-color: #ffeb3b;
-  transition: width .2s ease-in-out;
+.hero__title{
+  font-size: 48px;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.16;
 }
 
-.nav__link-apps:hover:after,
-.nav__link-apps:focus:after {
-    width: 100%;
+.hero__description{
+  color: #7d7987;
+  font-size: 21px;
+  line-height: 1.52;
+  font-weight: 300;
+  margin-top: 25px;
 }
 
-/* ВиєЖЖалка з права на ліво для TESTIMONIALS */
-.nav__item-test{
-  position: relative;
-}
-.nav__link-test:after {
-  display: block;
-  position: absolute;
-  content: "";
-  height: 2px;
-  right: 0%;
-  width: 0%;
-  background-color: #ffeb3b;
-  transition: width .2s ease-in-out;
+.hero__btn{
+  margin-top: 45px;
 }
 
-.nav__link-test:hover:after,
-.nav__link-test:focus:after {
-    width: 100%;
-}
-
-/* Виєжжалка для субменю */
-.nav__link--sub-link:after {
-  display: block;
-  position: absolute;
-  content: "";
-  height: 2px;
-  width: 0%;
-  background-color: #ffeb3b;
-  transition: width .2s ease-in-out;
-}
-
-.nav__link--sub-link:hover:after,
-.nav__link--sub-link:focus:after {
-    width: 85px;
-}
-
-/* Кінець стилів Палок-виєЖЖалок */
 
 .nav__link--sub-link:hover {
   color: black;
